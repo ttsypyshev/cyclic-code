@@ -1,5 +1,5 @@
-# Алгоритм обнаружения ошибок кодировки
+# Encoding error detection algorithm
 
-Имеется дискретный канал связи, на вход которого подается закодированная в соответствии с вариантом задания кодовая последовательность. 
-В канале возможны ошибки любой кратности. Вектор ошибки может принимать значения от единицы в младшем разряде до единицы во всех разрядах кодового вектора. 
-Для каждого значения вектора ошибки на выходе канала после декодирования определяется факт наличия ошибки и предпринимается попытка ее исправления.  
+There is a discrete communication channel, the input of which is supplied with a code sequence encoded in accordance with the assignment option. 
+Errors of any multiplicity are possible in the channel. The error vector can take values from one in the lowest digit to one in all digits of the code vector. 
+For each value of the error vector at the channel output after decoding, the fact of the error is detected and passed to the operator of the service.

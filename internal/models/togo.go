@@ -2,6 +2,7 @@ package models
 
 import (
 	"fmt"
+	"log"
 	"math/bits"
 )
 
@@ -131,10 +132,14 @@ func DivisionOperation(numerator, denominator uint64) (uint64, uint64) {
 
 func GetErrorsByClasses(n uint64) [][]uint64 { //n=number of classes
 	ErrorClasses := make([][]uint64, n+1)
+	sum_size := 0
 	for i := uint64(1); i <= n; i++ {
 		size := Factorial(n) / Factorial(n-i) / Factorial(i) //C i n
 		ErrorClasses[i] = make([]uint64, 0, size)
+		log.Println("Кратность: ", i, "количество ошибок: ", size)
+		sum_size += int(size)
 	}
+	log.Println("Суммарное количество ошибок: ", sum_size)
 
 	for i := uint64(1); i < PowBinary(n); i++ { //append all corresponding errors to their classes
 		class := bits.OnesCount64(i)
